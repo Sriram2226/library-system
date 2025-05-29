@@ -18,4 +18,9 @@ export class BookService {
     await this.bookRepository.save(updatedBook);
     return updatedBook;
   }
+
+  async createBook(book: Book): Promise<void> {
+  await this.bookRepository.save(book);
+}
+
 }

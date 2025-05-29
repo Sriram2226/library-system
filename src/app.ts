@@ -13,6 +13,7 @@ const bookService = new BookService(bookRepository);
 const bookController = new BookController(bookService);
 
 // Routes
+app.post('/books', (req, res) => bookController.createBook(req, res));
 app.post('/books/:id/borrow', (req, res) => bookController.borrowBook(req, res));
 
 const port = 3000;

@@ -13,4 +13,15 @@ export class BookController {
       res.status(400).json({ error: error.message });
     }
   }
+
+  async createBook(req: Request, res: Response): Promise<void> {
+  try {
+    const book = req.body;
+    await this.bookService.createBook(book);
+    res.status(201).json(book);
+  } catch (error: any) {
+    res.status(400).json({ error: error.message });
+  }
+}
+
 }
